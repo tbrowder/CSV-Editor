@@ -1,0 +1,25 @@
+Requirements for a simple Raku visual CSV text file editing program.
+
+The editor will use normally available Debian packages
+as well as published Raku modules as required.
+
+Ideally, packages from MacOS and Windows should be used
+to also create a usable editor for those operation system.
+
+Specific requirements:
+
+A. Text file contents
+
+1. Text is separated by newlines.
+
+2. The first line of text is the header line with field (column) names.
+
+3. Field separators must be one of the following characters: comma, semicolon, 
+or pipe (vertical line). Nore
+
+4. Field names must be single words comprised of members
+from the set of ASCII alphabetic and number characters and the hyphen.
+
+5. Lines following the header line are records separated into fields of
+data delimited by the same character as the header line.
+
