@@ -45,16 +45,37 @@ with valid records.
          |      |  n   |
          |      |  o
 
+7. A # character (pound sign or octothorpe) as the first 
+character in a record will cause that record to be ignored 
+in any other actions but a file save.
+
 B. Viewer requirements
 
 1. Open with a CLI command, with or without the ampersand:
 
    csv-edit $file  
 
-That produces a pop-up editing widget with the opened $file
+That produces a pop-up editing widget with the opened file
 contents in an editable window with a visible editing cursor.
+The widget size will be adjusted by clicking on a corner
+and dragging it to a new position.
 
 2. Has the following buttons for push action with the cursor:
 
-   Save, Exit, FitWidth
-   
+   Save     - saves the opened file in its current state
+
+   Exit     - if the $file has unsaved changes, asks the
+              user whether to save before exiting or not
+
+   FitWidth - adjusts each field to its minimum width considering
+              the width of the widest content in that field
+              with one space between the adjacent field separator
+             
+              the contents of each record and each field are
+              left justified during the process; text in a field
+              is also normalized to collapse multiple spaces to
+              a single space
+
+3. Has a slider to enable the user to scroll the contents of the
+view left/right and up/down in order to view all file contents
+with the current editor window shape.
