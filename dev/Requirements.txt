@@ -10,16 +10,51 @@ Specific requirements:
 
 A. Text file contents
 
-1. Text is separated by newlines.
+1. Text records are separated by newlines.
 
 2. The first line of text is the header line with field (column) names.
+Each field must be named. 
 
 3. Field separators must be one of the following characters: comma, semicolon, 
-or pipe (vertical line). Nore
+or vertical line (pipe). No other text must use the field separator character
+unless it is properly exscaped or enclosed by a pair of apostrophe characters.
 
 4. Field names must be single words comprised of members
 from the set of ASCII alphabetic and number characters and the hyphen.
+Each field name must be unique. Following is a valid header line
+with two fields. It is also a valid, but empty, CSV table.
+Note the absence of a leading or trailing field 
+separator.
+
+    f1 | f2
 
 5. Lines following the header line are records separated into fields of
 data delimited by the same character as the header line.
+A record may have empty fields. Records with trailing empty fields
+need not have separators for those fields. Records cannot have
+more fields than the header line.
 
+6. Spaces between field separators and adjacent text are not significant and may
+be removed or padded as necessary or desired. Follwing is a table
+with valid records.
+
+     f1  |  f2  |  f3  |  f4  |  f5
+     a |    b  |   c |    d |    e
+       |    f  |   g   |  h   |  i
+     j   |  k   |      | l    | m
+         |      |  n   |
+         |      |  o
+
+B. Viewer requirements
+
+1. Open with a CLI command, with or without the ampersand:
+
+   csv-edit $file  
+
+That produces a pop-up editing widget with the opened $file
+contents in an editable window with a visible editing cursor.
+
+2. Has the following buttons for push action with the cursor:
+
+   Save, Exit, FitWidth
+   
