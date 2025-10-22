@@ -1,0 +1,25 @@
+{
+  "auth": "zef:tbrowder",
+  "authors": [
+    "Tom Browder"
+  ],
+  "build-depends": [
+  ],
+  "depends": [
+  ],
+  "description": "Provides a simple viewer and editor for CSV files\n",
+  "license": "Artistic-2.0",
+  "name": "CSV::Editor",
+  "perl": "6.d",
+  "provides": {
+    "CSV::Editor": "lib/CSV/Editor.rakumod"
+  },
+  "resources": [
+  ],
+  "source-url": "",
+  "tags": [
+  ],
+  "test-depends": [
+  ],
+  "version": "0.0.1"
+}
