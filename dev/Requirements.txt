@@ -45,8 +45,12 @@ with valid records.
          |      |  n   |
          |      |  o
 
-7. A # character (pound sign or octothorpe) as the first 
-character in a record will cause that record to be ignored 
+7. A '#' character (pound sign or octothorpe) as the first 
+character in a record will cause that record only to be ignored 
+in any other actions but a file save.
+
+8. A '=finish' entry as the first entry in a record
+will cause that record and the remaining records to be ignored 
 in any other actions but a file save.
 
 B. Viewer requirements
@@ -64,7 +68,7 @@ and dragging it to a new position.
 
    Save     - saves the opened file in its current state
 
-   Exit     - if the $file has unsaved changes, asks the
+   Exit     - if the file has unsaved changes, asks the
               user whether to save before exiting or not
 
    FitWidth - adjusts each field to its minimum width considering
