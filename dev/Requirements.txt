@@ -1,10 +1,11 @@
-Requirements for a simple Raku visual CSV text file editing program.
+Requirements for a simple Raku visual CSV text file editing program to be part
+of a published module named "CSV::Editor"
 
-The editor will use normally available Debian packages
-as well as published Raku modules as required.
+The editor will use normally available Debian packages as well as
+published Raku modules as required.
 
-Ideally, packages from MacOS and Windows should be used
-to also create a usable editor for those operation system.
+Ideally, packages from MacOS and Windows should be used to also create
+a usable editor for those operation system.
 
 Specific requirements:
 
@@ -12,31 +13,31 @@ A. Text file contents
 
 1. Text records are separated by newlines.
 
-2. The first line of text is the header line with field (column) names.
-Each field must be named. 
+2. The first line of text is the header line with field (column)
+names.  Each field must be named.
 
-3. Field separators must be one of the following characters: comma, semicolon, 
-or vertical line (pipe). No other text must use the field separator character
-unless it is properly exscaped or enclosed by a pair of apostrophe characters.
+3. Field separators must be one of the following characters: comma,
+semicolon, or vertical line (pipe). No other text must use the field
+separator character unless it is properly exscaped or enclosed by a
+pair of apostrophe characters.
 
-4. Field names must be single words comprised of members
-from the set of ASCII alphabetic and number characters and the hyphen.
-Each field name must be unique. Following is a valid header line
-with two fields. It is also a valid, but empty, CSV table.
-Note the absence of a leading or trailing field 
-separator.
+4. Field names must be single words comprised of members from the set
+of ASCII alphabetic and number characters and the hyphen.  Each field
+name must be unique. Following is a valid header line with two
+fields. It is also a valid, but empty, CSV table.  Note the absence of
+a leading or trailing field separator.
 
     f1 | f2
 
-5. Lines following the header line are records separated into fields of
-data delimited by the same character as the header line.
-A record may have empty fields. Records with trailing empty fields
-need not have separators for those fields. Records cannot have
-more fields than the header line.
+5. Lines following the header line are records separated into fields
+of data delimited by the same character as the header line.  A record
+may have empty fields. Records with trailing empty fields need not
+have separators for those fields. Records cannot have more fields than
+the header line.
 
-6. Spaces between field separators and adjacent text are not significant and may
-be removed or padded as necessary or desired. Follwing is a table
-with valid records.
+6. Spaces between field separators and adjacent text are not
+significant and may be removed or padded as necessary or
+desired. Follwing is a table with valid records.
 
      f1  |  f2  |  f3  |  f4  |  f5
      a |    b  |   c |    d |    e
@@ -45,24 +46,24 @@ with valid records.
          |      |  n   |
          |      |  o
 
-7. A '#' character (pound sign or octothorpe) as the first 
-character in a record will cause that record only to be ignored 
-in any other actions but a file save.
+7. A '#' character (pound sign or octothorpe) as the first character
+in a record will cause that record only to be ignored in any other
+actions but a file save.
 
-8. A '=finish' entry as the first entry in a record
-will cause that record and the remaining records to be ignored 
-in any other actions but a file save.
+8. A '=finish' entry as the first entry in a record will cause that
+record and the remaining records to be ignored in any other actions
+but a file save.
 
 B. Viewer requirements
 
 1. Open with a CLI command, with or without the ampersand:
 
-   csv-edit $file  
+   csv-edit $file
 
-That produces a pop-up editing widget with the opened file
-contents in an editable window with a visible editing cursor.
-The widget size will be adjusted by clicking on a corner
-and dragging it to a new position.
+That produces a pop-up editing widget with the opened file contents in
+an editable window with a visible editing cursor.  The widget size
+will be adjusted by clicking on a corner and dragging it to a new
+position.
 
 2. Has the following buttons for push action with the cursor:
 
@@ -71,15 +72,14 @@ and dragging it to a new position.
    Exit     - if the file has unsaved changes, asks the
               user whether to save before exiting or not
 
-   FitWidth - adjusts each field to its minimum width considering
-              the width of the widest content in that field
-              with one space between the adjacent field separator
-             
-              the contents of each record and each field are
-              left justified during the process; text in a field
-              is also normalized to collapse multiple spaces to
-              a single space
+   FitWidth - adjusts each field to its minimum width considering the
+              width of the widest content in that field with one space
+              between the adjacent field separator
 
-3. Has a slider to enable the user to scroll the contents of the
-view left/right and up/down in order to view all file contents
-with the current editor window shape.
+              the contents of each record and each field are left
+              justified during the process; text in a field is also
+              normalized to collapse multiple spaces to a single space
+
+3. Has a slider to enable the user to scroll the contents of the view
+left/right and up/down in order to view all file contents with the
+current editor window shape.

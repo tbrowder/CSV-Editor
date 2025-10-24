@@ -1,3 +1,5 @@
+[![Actions Status](https://github.com/tbrowder/CSV-Editor/actions/workflows/linux.yml/badge.svg)](https://github.com/tbrowder/CSV-Editor/actions) [![Actions Status](https://github.com/tbrowder/CSV-Editor/actions/workflows/macos.yml/badge.svg)](https://github.com/tbrowder/CSV-Editor/actions) [![Actions Status](https://github.com/tbrowder/CSV-Editor/actions/workflows/windows.yml/badge.svg)](https://github.com/tbrowder/CSV-Editor/actions)
+
 NAME
 ====
 
