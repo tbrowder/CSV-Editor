@@ -6,13 +6,16 @@
   "build-depends": [
   ],
   "depends": [
+    "GTK::Simple"
   ],
   "description": "Provides a simple viewer and editor for CSV files\n",
   "license": "Artistic-2.0",
   "name": "CSV::Editor",
   "perl": "6.d",
   "provides": {
-    "CSV::Editor": "lib/CSV/Editor.rakumod"
+    "CSV::Editor": "lib/CSV/Editor.rakumod",
+    "CSV::Editor::App": "lib/CSV/Editor/App.rakumod",
+    "CSV::Editor::Types": "lib/CSV/Editor/Types.rakumod"
   },
   "resources": [
   ],

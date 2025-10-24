@@ -4,7 +4,6 @@
 
 B<CSV::Editor> - Provides a simple viewer and editor for CSV files
 
-
 =head1 SYNOPSIS
 
 =begin code :lang<raku>

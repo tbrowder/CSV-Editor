@@ -2,6 +2,8 @@ use Test;
 
 my @modules = <
     CSV::Editor
+    CSV::Editor::App
+    CSV::Editor::Types
 >;
 
 plan @modules.elems;

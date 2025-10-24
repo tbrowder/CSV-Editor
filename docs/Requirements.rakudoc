@@ -1,0 +1,16 @@
+=begin pod
+
+=head1 Requirements for CSV::Editor
+
+(Imported from user's Requirements.txt)
+
+=item Header line with field names; separators are one of: C<|>, C<,>, C<;>.
+=item Field names are ASCII letters, digits, or hyphen; unique.
+=item Records may have empty fields; trailing empties may omit separators.
+=item Whitespace padding around separators is insignificant.
+=item Lines starting with C<#> are ignored except for file save.
+=item A record starting with C<=finish> ends effective content.
+=item GUI launched as C<csv-edit $file> with Save, Exit, FitWidth.
+=item Scrolling both directions; resizable widget window.
+
+=end pod

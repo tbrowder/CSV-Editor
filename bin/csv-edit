@@ -1,0 +1,9 @@
+#!/usr/bin/env raku
+use v6.d;
+
+use CSV::Editor::App;
+
+sub MAIN(Str:D $file) {
+    die "File not found: $file" unless $file.IO.e;
+    CSV::Editor::App::run($file);
+}
