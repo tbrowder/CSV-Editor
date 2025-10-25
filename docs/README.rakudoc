@@ -9,12 +9,54 @@ B<CSV::Editor> - Provides a simple viewer and editor for CSV files
 =begin code :lang<raku>
 
 use CSV::Editor;
-
+$ csv-edit $christmas-list # edit the text CSV table of addresses
 =end code
 
 =head1 DESCRIPTION
 
-B<CSV::Editor> is ...
+B<CSV::Editor> is a simple, visual editor for text CSV files.
+
+It has a few format restrictions:
+
+=item the only valid field separators are
+=item2 comma: C<,>
+=item2 semicolon: C<;>
+=item2 pipe (vertical line): C<|>
+=item the following objects are not allowed in a B<valid> field
+unless they are escaped with a backslash (C<\>)
+=item2 octothorpe or pound sign: C<#>
+
+Its current capabilities are:
+
+=item allow the user to edit the viewed file
+=item align the valid fields so each field has the same widths
+=item left-justify the contents of valid fields
+=item allow saving the current view (state) of the file
+=item allow comment lines beginning with a pound sign ('#')
+=item ignoring the rest of the file when encountering a line beginning with '=finish'
+
+Note the record lines with comments and lines on and after '=finish'
+are conidered invalid CSV records but B<are saved with the file>.
+
+=head2 Motivation and source
+
+This project was motivated by my old, but updated, Christmas
+list management program started in 1993 as a Perl 4 
+project and gradually converted to Perl 5 and then to
+Raku (Perl 6) in 2016. Record fields were pipe separated and
+lines commented out when contacts were no longer valid or
+wanted.
+
+There was no easy way to align the fields with conventional CSV
+reader/writer programs. This past week I wrote the included
+I<Requirements> dovument and fed it to ChatGPT which gave
+me a gigantic start. Since then I've been fixing errors and
+changing things which didn't quite work. 
+
+One of the major problems was the use of Map which I find is
+the source of a lot of hidden mistakes (which I find
+hard to 'grok'). I wind up unpacking the Maps so I can (1)
+understand the intent and (2) fix problem more easily.
 
 =head1 AUTHOR
 
