@@ -20,7 +20,7 @@ DESCRIPTION
 
 It has a few format restrictions:
 
-  * the only valid field separators are
+  * The only valid field separators are:
 
     * comma: `,`
 
@@ -28,9 +28,15 @@ It has a few format restrictions:
 
     * pipe (vertical line): `|`
 
-  * the following objects are not allowed in a **valid** field unless they are escaped with a backslash (`\`)
+  * The following objects are not allowed in a **valid** field unless they are escaped with a backslash (`\`):
 
     * octothorpe or pound sign: `#`
+
+    * comma: `,`
+
+    * semicolon: `;`
+
+    * pipe (vertical line): `|`
 
 Its current capabilities are:
 

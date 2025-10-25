@@ -18,13 +18,16 @@ B<CSV::Editor> is a simple, visual editor for text CSV files.
 
 It has a few format restrictions:
 
-=item the only valid field separators are
+=item The only valid field separators are:
 =item2 comma: C<,>
 =item2 semicolon: C<;>
 =item2 pipe (vertical line): C<|>
-=item the following objects are not allowed in a B<valid> field
-unless they are escaped with a backslash (C<\>)
+=item The following objects are not allowed in a B<valid> field
+unless they are escaped with a backslash (C<\>):
 =item2 octothorpe or pound sign: C<#>
+=item2 comma: C<,>
+=item2 semicolon: C<;>
+=item2 pipe (vertical line): C<|>
 
 Its current capabilities are:
 
