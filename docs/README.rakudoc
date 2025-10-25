@@ -59,7 +59,7 @@ changing things which didn't quite work.
 One of the major problems was the use of Map which I find is
 the source of a lot of hidden mistakes (which I find
 hard to 'grok'). I wind up unpacking the Maps so I can (1)
-understand the intent and (2) fix problem more easily.
+understand the intent and (2) fix problems more easily.
 
 =head1 AUTHOR
 

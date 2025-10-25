@@ -61,7 +61,7 @@ This project was motivated by my old, but updated, Christmas list management pro
 
 There was no easy way to align the fields with conventional CSV reader/writer programs. This past week I wrote the included *Requirements* dovument and fed it to ChatGPT which gave me a gigantic start. Since then I've been fixing errors and changing things which didn't quite work. 
 
-One of the major problems was the use of Map which I find is the source of a lot of hidden mistakes (which I find hard to 'grok'). I wind up unpacking the Maps so I can (1) understand the intent and (2) fix problem more easily.
+One of the major problems was the use of Map which I find is the source of a lot of hidden mistakes (which I find hard to 'grok'). I wind up unpacking the Maps so I can (1) understand the intent and (2) fix problems more easily.
 
 AUTHOR
 ======
