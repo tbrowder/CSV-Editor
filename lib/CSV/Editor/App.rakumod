@@ -3,7 +3,8 @@ unit module CSV::Editor::App;
 use GTK::Simple;
 use CSV::Editor;
 
-sub run(Str:D $path --> Nil) is export {
+#sub run(Str:D $path --> Nil) is export {
+sub run($path --> Nil) is export {
     my $orig = $path.IO.slurp;
 
     my $win = GTK::Simple::Window.new(title => "CSV::Editor - {$path}", width => 900, height => 600);

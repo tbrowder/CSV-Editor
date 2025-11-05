@@ -6,6 +6,7 @@
   "build-depends": [
   ],
   "depends": [
+    "File::Find",
     "GTK::Simple"
   ],
   "description": "Provides a simple viewer and editor for CSV files\n",

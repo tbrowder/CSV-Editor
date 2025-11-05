@@ -3,8 +3,6 @@ use Test;
 use CSV::Editor;
 use CSV::Editor::Types;
 
-#plan 4;
-
 # an unformatted Table
 my $text = q:to/HERE/;
 f1| f2  | f3
@@ -38,6 +36,5 @@ say "\@fmt[1] = |{@fmt[1]}|";
 ok @fmt[1] ~~ / 'a  | b  | c' /, "properly formatted first row";
 
 done-testing;
-=finish
 
 
