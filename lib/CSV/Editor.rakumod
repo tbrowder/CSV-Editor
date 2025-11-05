@@ -1,5 +1,7 @@
 unit module CSV::Editor;
+
 use CSV::Editor::Types;
+use CSV::Editor::App;
 
 # Raku style: 4-space indents, no cuddled else/elsif, hyphenated subs where allowed.
 
@@ -15,8 +17,8 @@ sub detect-sep(Str:D $line --> Sep) is export {
 
 # Parse header names: ASCII alnum or hyphen, unique, single words
 sub parse-headers(
-    Str:D $line, 
-    Str:D :$sep, 
+    Str:D $line,
+    Str:D :$sep,
     --> List
 ) is export {
     my $s = $sep // detect-sep($line);
@@ -43,8 +45,8 @@ sub parse-headers(
 # - whitespace padding around separators is insignificant
 # - empty fields allowed; trailing empty fields may be omitted
 sub split-record(
-    Str:D $line, 
-    Str:D :$sep, 
+    Str:D $line,
+    Str:D :$sep,
     --> List
 ) is export {
     my $s = $sep // detect-sep($line);
@@ -66,14 +68,14 @@ sub split-record(
     }
     @out.push($buf.trim);
 
-    # Trailing empties may be omitted (we will right-pad 
+    # Trailing empties may be omitted (we will right-pad
     # later as needed)
     return @out;
 }
 
 # Parse whole text into a Table
 sub parse-text(
-    Str:D $text 
+    Str:D $text
     --> Table
 ) is export {
     my @lines = $text.lines;
@@ -122,7 +124,7 @@ sub parse-text(
 # - respect apostrophe quoting if a cell contains the separator
 sub format-table(
     Table:D $t,
-    :$debug, 
+    :$debug,
     --> Str
 ) is export {
     # this looks suspicious.
@@ -130,7 +132,7 @@ sub format-table(
     if 0 or $debug {
         my $s = @w.join(',');
         say qq:to/HERE/;
-        DEBUG: the default \@w array: 
+        DEBUG: the default \@w array:
             $s
         HERE
         exit(1);
@@ -143,10 +145,10 @@ sub format-table(
     for $t.rows -> @r {
         for @r.kv -> $idx, $cell {
             my $c = $cell;
-            # If cell contains the separator and not already quoted, 
+            # If cell contains the separator and not already quoted,
             #   quote with apostrophes
-            if $c.contains($t.sep) 
-                and not ($c.starts-with("'") 
+            if $c.contains($t.sep)
+                and not ($c.starts-with("'")
                 and $c.ends-with("'")) {
                     $c = "'" ~ $c ~ "'";
             }
@@ -157,13 +159,13 @@ sub format-table(
     my $sep-out = " { $t.sep } ";
     if 0 or $debug {
         say qq:to/HERE/;
-        DEBUG: the \$sep-out string: 
+        DEBUG: the \$sep-out string:
             |$sep-out|
         HERE
         exit(1);
     }
 
-    sub pad-right(Str:D $s, 
+    sub pad-right(Str:D $s,
             Int :$field-width!,
             --> Str
           ) {
@@ -180,7 +182,7 @@ sub format-table(
 
     if 0 or $debug {
         say qq:to/HERE/;
-        DEBUG: the \$header string: 
+        DEBUG: the \$header string:
             |$header|
         HERE
         exit(1);
@@ -208,4 +210,3 @@ sub fit-width(Str:D $text --> Str) is export {
     my $t = parse-text($text);
     return format-table($t);
 }
-

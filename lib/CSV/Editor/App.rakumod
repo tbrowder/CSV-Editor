@@ -1,7 +1,7 @@
 unit module CSV::Editor::App;
 
 use GTK::Simple;
-use CSV::Editor;
+#use CSV::Editor;
 
 #sub run(Str:D $path --> Nil) is export {
 sub run($path --> Nil) is export {
@@ -33,7 +33,7 @@ sub run($path --> Nil) is export {
     $btn-fit.clicked.tap({
         my $cur = $textview.buffer.text;
         try {
-            $textview.buffer.text = fit-width($cur);
+            $textview.buffer.text = CSV::Editor::fit-width($cur);
             CATCH { default { note "FitWidth error: " ~ .message } }
         }
     });

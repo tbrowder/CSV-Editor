@@ -5,5 +5,6 @@ use CSV::Editor::App;
 
 sub MAIN(Str:D $file) {
     die "File not found: $file" unless $file.IO.e;
-    CSV::Editor::App::run($file);
+    #CSV::Editor::App::run($file);
+    run($file);
 }
